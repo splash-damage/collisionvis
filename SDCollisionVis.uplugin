@@ -1,0 +1,40 @@
+{
+    "FileVersion" : 3,
+    "Version" : 1,
+    "VersionName" : "1.0",
+    "FriendlyName" : "SDCollisionVis",
+    "Description" : "",
+    "Category" : "Splash Damage",
+    "CreatedBy" : "Splash Damage",
+    "CreatedByURL" : "",
+    "DocsURL" : "",
+    "MarketplaceURL" : "",
+    "SupportURL" : "",
+    "EnabledByDefault" : true,
+    "CanContainContent" : false,
+    "IsBetaVersion": false,
+    "IsExperimentalVersion": false,
+    "Installed" : false,
+    "Modules" : [
+        {
+            "Name" : "SDCollisionVis",
+            "LoadingPhase" : "PostConfigInit",
+            "PlatformAllowList": [
+                "Win64"
+            ],
+            "Type" : "Runtime",
+            "TargetConfigurationAllowList": [
+                "Debug",
+                "DebugGame",
+                "Development",
+                "Test"
+            ],
+            "TargetAllowList": [
+                "Editor",
+                "Game",
+                "Client",
+                "Server"
+            ]
+        }
+    ]
+}

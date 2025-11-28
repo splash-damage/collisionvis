@@ -1,0 +1,16 @@
+// Copyright Splash Damage - All Rights Reserved.
+
+
+#include "/Engine/Private/Common.ush"
+
+
+Texture2D           SourceTexture;
+float2              InvViewport;
+
+
+void DrawTracedTexturePS(float4 SvPosition : SV_POSITION,
+                         out float4 OutCol : SV_Target0)
+{
+    OutCol = SourceTexture.Sample(GlobalBilinearClampedSampler,
+                                  SvPosition.xy * InvViewport.xy);
+}
