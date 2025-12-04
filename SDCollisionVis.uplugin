@@ -19,9 +19,6 @@
         {
             "Name" : "SDCollisionVis",
             "LoadingPhase" : "PostConfigInit",
-            "PlatformAllowList": [
-                "Win64"
-            ],
             "Type" : "Runtime",
             "TargetConfigurationAllowList": [
                 "Debug",

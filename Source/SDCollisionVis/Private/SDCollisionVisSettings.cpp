@@ -8,7 +8,6 @@
 #include <PixelShaderUtils.h>
 #include <RenderGraphResources.h>
 #include <RHICommandList.h>
-#include <ScenePrivate.h>
 #include <Shader.h>
 #include <ShaderParameterStruct.h>
 #include <Async/ParallelFor.h>

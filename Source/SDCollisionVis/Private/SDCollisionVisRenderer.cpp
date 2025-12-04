@@ -6,7 +6,6 @@
 #include <GlobalShader.h>
 #include <RenderGraphResources.h>
 #include <RHICommandList.h>
-#include <ScenePrivate.h>
 #include <Shader.h>
 #include <ScreenPass.h>
 #include <ShaderParameterStruct.h>
@@ -18,6 +17,8 @@
 #include <GameFramework/Pawn.h>
 #include <Engine/Level.h>
 #include <Containers/ResourceArray.h>
+#include <Misc/EngineVersionComparison.h>
+
 
 #if WITH_EDITOR
 #include <LevelEditorViewport.h>
@@ -204,7 +205,12 @@ void FSDCollisionVisRealtimeViewExtension::PostRenderViewFamily_RenderThread(FRD
 	FTextureRHIRef TraceTexture = RHICreateTexture(
 		FRHITextureCreateDesc::Create2D(TEXT("SDCollisionVis.TracedTexture"), RenderBuffer.Dimensions.X, RenderBuffer.Dimensions.Y, PF_B8G8R8A8)
 			.SetFlags(TexCreate_ShaderResource)
-			.SetInitActionBulkData(&Loader));
+#if UE_VERSION_NEWER_THAN_OR_EQUAL(5, 7, 0)
+			.SetInitActionBulkData(&Loader))
+#else	// UE_VERSION_NEWER_THAN_OR_EQUAL(5, 6, 0)
+			.SetBulkData(&Loader))
+#endif // UE_VERSION
+		;
 
 	{
 		FIntVector DestSize = ViewFamilyTexture->Desc.GetSize();

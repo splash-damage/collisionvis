@@ -48,6 +48,21 @@ Using `LineTraceSingleByObjectType`, we can raytrace the physics scene directly 
 
 ## **Quick Start**
 
+### Installing
+
+The easiest way to add this to Unreal, is by going to either `Engine/Plugins` or `Project/Plugins` and git cloning this repo directly there.
+
+`git clone https://github.com/splash-damage/collisionvis.git SDCollisionVis`
+
+And you should end up with something like:
+
+`Engine/Plugins/SDCollisionVis`
+
+
+### Launching
+
+By default, the plugin is enabled for `Editor`, `Game`, `Client` and `Server` for everything but `Shipping`.
+
 If you're in editor, you can very quickly enable the realtime overlay by toggling on this visualisation mode.
 
 [![Alt FacingRatio](./img/enable_realtime_editor.png)](./img/enable_realtime_editor.png)
